@@ -427,7 +427,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 .target {
-  /* background: blue; */
+  background: rgb(155, 123, 172);
   width: fit-content;
 }
 
@@ -436,28 +436,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background: white;
   padding: 10px 20px;
   position: absolute;
-  top: 2rem;
+  /* top: 2rem; */
   line-height: 1.5rem;
   border-radius: 5px;
-  /* visibility: hidden; */
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
   cursor: default;
   box-shadow: 2px 2px 15px rgb(2, 2, 2);
+
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.target:hover .box {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 ul {
   list-style-type: none;
 }
 
-/*! Trying to get the menu to display only when hovering the target word. Not when it hovers the hidden element. */
-
-.visible {
-  /* background: red; */
-  /* visibility: initial; */
-  opacity: 1;
+li:hover {
+  background: #1ce;
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;AACf;;AAEA;EACE,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,kBAAkB;EAClB,SAAS;EACT,mBAAmB;EACnB,kBAAkB;EAClB,wBAAwB;EACxB,UAAU;EACV,qCAAqC;EACrC,eAAe;EACf,qCAAqC;AACvC;;AAEA;EACE,qBAAqB;AACvB;;AAEA,kHAAkH;;AAElH;EACE,qBAAqB;EACrB,yBAAyB;EACzB,UAAU;AACZ","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n}\n\n.target {\n  /* background: blue; */\n  width: fit-content;\n}\n\n.box {\n  width: fit-content;\n  background: white;\n  padding: 10px 20px;\n  position: absolute;\n  top: 2rem;\n  line-height: 1.5rem;\n  border-radius: 5px;\n  /* visibility: hidden; */\n  opacity: 0;\n  transition: opacity 300ms ease-in-out;\n  cursor: default;\n  box-shadow: 2px 2px 15px rgb(2, 2, 2);\n}\n\nul {\n  list-style-type: none;\n}\n\n/*! Trying to get the menu to display only when hovering the target word. Not when it hovers the hidden element. */\n\n.visible {\n  /* background: red; */\n  /* visibility: initial; */\n  opacity: 1;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;AACf;;AAEA;EACE,8BAA8B;EAC9B,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,mBAAmB;EACnB,kBAAkB;EAClB,eAAe;EACf,qCAAqC;;EAErC,UAAU;EACV,qCAAqC;EACrC,oBAAoB;AACtB;;AAEA;EACE,UAAU;EACV,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,gBAAgB;AAClB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n}\n\n.target {\n  background: rgb(155, 123, 172);\n  width: fit-content;\n}\n\n.box {\n  width: fit-content;\n  background: white;\n  padding: 10px 20px;\n  position: absolute;\n  /* top: 2rem; */\n  line-height: 1.5rem;\n  border-radius: 5px;\n  cursor: default;\n  box-shadow: 2px 2px 15px rgb(2, 2, 2);\n\n  opacity: 0;\n  transition: opacity 300ms ease-in-out;\n  pointer-events: none;\n}\n\n.target:hover .box {\n  opacity: 1;\n  pointer-events: initial;\n}\n\nul {\n  list-style-type: none;\n}\n\nli:hover {\n  background: #1ce;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

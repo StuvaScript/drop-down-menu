@@ -4,7 +4,7 @@ body {
 }
 
 .target {
-  /* background: blue; */
+  background: rgb(155, 123, 172);
   width: fit-content;
 }
 
@@ -13,22 +13,26 @@ body {
   background: white;
   padding: 10px 20px;
   position: absolute;
-  top: 2rem;
+  /* top: 2rem; */
   line-height: 1.5rem;
   border-radius: 5px;
-  /* visibility: hidden; */
-  opacity: 0;
-  transition: opacity 300ms ease-in-out;
   cursor: default;
   box-shadow: 2px 2px 15px rgb(2, 2, 2);
+
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.target:hover .box {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 ul {
   list-style-type: none;
 }
 
-.visible {
-  /* background: red; */
-  /* visibility: initial; */
-  opacity: 1;
+li:hover {
+  background: #1ce;
 }
