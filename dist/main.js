@@ -422,19 +422,42 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
-    background: #bada55;
-    padding: 10px;
+  background: #bada55;
+  padding: 10px;
+}
+
+.target {
+  /* background: blue; */
+  width: fit-content;
 }
 
 .box {
-    width: fit-content;
-    background: white;
-    padding: 10px 20px;
-    position: relative;
-    top: 10px;
-    line-height: 1.5rem;
-    border-radius: 5px;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,kBAAkB;IAClB,kBAAkB;IAClB,SAAS;IACT,mBAAmB;IACnB,kBAAkB;AACtB","sourcesContent":["body {\n    background: #bada55;\n    padding: 10px;\n}\n\n.box {\n    width: fit-content;\n    background: white;\n    padding: 10px 20px;\n    position: relative;\n    top: 10px;\n    line-height: 1.5rem;\n    border-radius: 5px;\n}"],"sourceRoot":""}]);
+  width: fit-content;
+  background: white;
+  padding: 10px 20px;
+  position: absolute;
+  top: 2rem;
+  line-height: 1.5rem;
+  border-radius: 5px;
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  cursor: default;
+  box-shadow: 2px 2px 15px rgb(2, 2, 2);
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*! Trying to get the menu to display only when hovering the target word. Not when it hovers the hidden element. */
+
+.visible {
+  /* background: red; */
+  /* visibility: initial; */
+  opacity: 1;
+}
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;AACf;;AAEA;EACE,sBAAsB;EACtB,kBAAkB;AACpB;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,kBAAkB;EAClB,SAAS;EACT,mBAAmB;EACnB,kBAAkB;EAClB,wBAAwB;EACxB,UAAU;EACV,qCAAqC;EACrC,eAAe;EACf,qCAAqC;AACvC;;AAEA;EACE,qBAAqB;AACvB;;AAEA,kHAAkH;;AAElH;EACE,qBAAqB;EACrB,yBAAyB;EACzB,UAAU;AACZ","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n}\n\n.target {\n  /* background: blue; */\n  width: fit-content;\n}\n\n.box {\n  width: fit-content;\n  background: white;\n  padding: 10px 20px;\n  position: absolute;\n  top: 2rem;\n  line-height: 1.5rem;\n  border-radius: 5px;\n  /* visibility: hidden; */\n  opacity: 0;\n  transition: opacity 300ms ease-in-out;\n  cursor: default;\n  box-shadow: 2px 2px 15px rgb(2, 2, 2);\n}\n\nul {\n  list-style-type: none;\n}\n\n/*! Trying to get the menu to display only when hovering the target word. Not when it hovers the hidden element. */\n\n.visible {\n  /* background: red; */\n  /* visibility: initial; */\n  opacity: 1;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1020,8 +1043,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const dog = 4;
- dog;
 })();
 
 /******/ })()

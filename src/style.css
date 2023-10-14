@@ -3,12 +3,32 @@ body {
   padding: 10px;
 }
 
+.target {
+  /* background: blue; */
+  width: fit-content;
+}
+
 .box {
   width: fit-content;
   background: white;
   padding: 10px 20px;
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 2rem;
   line-height: 1.5rem;
   border-radius: 5px;
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  cursor: default;
+  box-shadow: 2px 2px 15px rgb(2, 2, 2);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.visible {
+  /* background: red; */
+  /* visibility: initial; */
+  opacity: 1;
 }
