@@ -10,6 +10,7 @@ const dDBBackground = 'white';
 const boxShadow = '2px 2px 15px rgb(2, 2, 2)';
 const borderRadius = '5px';
 const lineHeight = '1.5rem';
+const distanceBelowTarget = '1.2rem';
 const fadeInOutTransition = '300ms ease-in-out';
 
 //? **`` Dropdown List
@@ -29,6 +30,13 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
 
 //* **`` STYLING FUNCTIONS ``**
 
+//? **`` Loops over all 'drop-down-targets' and styles them.
+[...target].map((element) => {
+  Object.assign(element.style, {
+    position: 'relative',
+  });
+});
+
 //? **`` Loops over all 'drop-down-boxes' and styles them.
 [...box].map((element) => {
   Object.assign(element.style, {
@@ -36,9 +44,11 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
     boxShadow: boxShadow,
     borderRadius: borderRadius,
     lineHeight: lineHeight,
+    top: distanceBelowTarget,
     transition: 'opacity ' + fadeInOutTransition,
     position: 'absolute',
     opacity: '0',
+    zIndex: '1',
     pointerEvents: 'none',
   });
 });

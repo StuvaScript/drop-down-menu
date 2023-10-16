@@ -3,6 +3,7 @@ body {
   padding: 10px;
 
   display: flex;
+  flex-direction: column;
   gap: 50px;
 }
 
@@ -11,16 +12,18 @@ body {
   /* width: 50px; */
   /* background: blue; */
   /* font-size: 2rem; */
+  /* position: relative; */
 }
 
 .drop-down-box {
   /* width: 100px; */
   /* background: white; */
   /* padding: 10px 20px; */
-  /* top: 2rem; */
+  /* top: 1.8rem; */
   /* line-height: 1.5rem; */
   /* border-radius: 5px; */
   /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */
+  /* z-index: 1; */
 
   /* position: absolute; */
   /* opacity: 0; */

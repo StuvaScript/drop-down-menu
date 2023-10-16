@@ -426,6 +426,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   padding: 10px;
 
   display: flex;
+  flex-direction: column;
   gap: 50px;
 }
 
@@ -434,16 +435,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   /* width: 50px; */
   /* background: blue; */
   /* font-size: 2rem; */
+  /* position: relative; */
 }
 
 .drop-down-box {
   /* width: 100px; */
   /* background: white; */
   /* padding: 10px 20px; */
-  /* top: 2rem; */
+  /* top: 1.8rem; */
   /* line-height: 1.5rem; */
   /* border-radius: 5px; */
   /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */
+  /* z-index: 1; */
 
   /* position: absolute; */
   /* opacity: 0; */
@@ -469,7 +472,7 @@ li:hover,
 p:hover {
   /* background: #1ce; */
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,qBAAqB;AACvB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,wBAAwB;EACxB,2CAA2C;;EAE3C,wBAAwB;EACxB,gBAAgB;EAChB,2CAA2C;EAC3C,0BAA0B;AAC5B;;AAEA;EACE,gBAAgB;EAChB,6BAA6B;AAC/B;;AAEA;EACE,2BAA2B;EAC3B,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;AACzB;;AAEA;;EAEE,sBAAsB;AACxB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  /* font-size: 2rem; */\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  /* background: white; */\n  /* padding: 10px 20px; */\n  /* top: 2rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */\n\n  /* position: absolute; */\n  /* opacity: 0; */\n  /* transition: opacity 300ms ease-in-out; */\n  /* pointer-events: none; */\n}\n\n.drop-down-target:hover .drop-down-box {\n  /* opacity: 1; */\n  /* pointer-events: initial; */\n}\n\nul {\n  /* list-style-type: none; */\n  /* padding: 5px; */\n}\n\nli {\n  /* padding: 2px 10px; */\n}\n\nli:hover,\np:hover {\n  /* background: #1ce; */\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,sBAAsB;EACtB,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,qBAAqB;EACrB,wBAAwB;AAC1B;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,wBAAwB;EACxB,iBAAiB;EACjB,yBAAyB;EACzB,wBAAwB;EACxB,2CAA2C;EAC3C,gBAAgB;;EAEhB,wBAAwB;EACxB,gBAAgB;EAChB,2CAA2C;EAC3C,0BAA0B;AAC5B;;AAEA;EACE,gBAAgB;EAChB,6BAA6B;AAC/B;;AAEA;EACE,2BAA2B;EAC3B,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;AACzB;;AAEA;;EAEE,sBAAsB;AACxB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  flex-direction: column;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  /* font-size: 2rem; */\n  /* position: relative; */\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  /* background: white; */\n  /* padding: 10px 20px; */\n  /* top: 1.8rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */\n  /* z-index: 1; */\n\n  /* position: absolute; */\n  /* opacity: 0; */\n  /* transition: opacity 300ms ease-in-out; */\n  /* pointer-events: none; */\n}\n\n.drop-down-target:hover .drop-down-box {\n  /* opacity: 1; */\n  /* pointer-events: initial; */\n}\n\nul {\n  /* list-style-type: none; */\n  /* padding: 5px; */\n}\n\nli {\n  /* padding: 2px 10px; */\n}\n\nli:hover,\np:hover {\n  /* background: #1ce; */\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1064,6 +1067,7 @@ const dDBBackground = 'white';
 const boxShadow = '2px 2px 15px rgb(2, 2, 2)';
 const borderRadius = '5px';
 const lineHeight = '1.5rem';
+const distanceBelowTarget = '1.2rem';
 const fadeInOutTransition = '300ms ease-in-out';
 
 //? **`` Dropdown List
@@ -1083,6 +1087,13 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
 
 //* **`` STYLING FUNCTIONS ``**
 
+//? **`` Loops over all 'drop-down-targets' and styles them.
+[...target].map((element) => {
+  Object.assign(element.style, {
+    position: 'relative',
+  });
+});
+
 //? **`` Loops over all 'drop-down-boxes' and styles them.
 [...box].map((element) => {
   Object.assign(element.style, {
@@ -1090,9 +1101,11 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
     boxShadow: boxShadow,
     borderRadius: borderRadius,
     lineHeight: lineHeight,
+    top: distanceBelowTarget,
     transition: 'opacity ' + fadeInOutTransition,
     position: 'absolute',
     opacity: '0',
+    zIndex: '1',
     pointerEvents: 'none',
   });
 });
