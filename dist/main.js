@@ -433,20 +433,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   /* width: fit-content; */
   /* width: 50px; */
   /* background: blue; */
-  font-size: 2rem;
+  /* font-size: 2rem; */
 }
 
 .drop-down-box {
   /* width: 100px; */
-  background: white;
+  /* background: white; */
   /* padding: 10px 20px; */
   /* top: 2rem; */
   /* line-height: 1.5rem; */
   /* border-radius: 5px; */
-  box-shadow: 2px 2px 15px rgb(2, 2, 2);
+  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */
 
-  position: absolute;
-  opacity: 0;
+  /* position: absolute; */
+  /* opacity: 0; */
   transition: opacity 300ms ease-in-out;
   pointer-events: none;
 }
@@ -457,14 +457,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 ul {
-  list-style-type: none;
+  /* list-style-type: none; */
+  /* padding: 5px; */
+}
+
+li {
+  /* padding: 2px 10px; */
 }
 
 li:hover,
 p:hover {
-  background: #1ce;
+  /* background: #1ce; */
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,eAAe;AACjB;;AAEA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,wBAAwB;EACxB,qCAAqC;;EAErC,kBAAkB;EAClB,UAAU;EACV,qCAAqC;EACrC,oBAAoB;AACtB;;AAEA;EACE,UAAU;EACV,uBAAuB;AACzB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;;EAEE,gBAAgB;AAClB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  font-size: 2rem;\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  background: white;\n  /* padding: 10px 20px; */\n  /* top: 2rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  box-shadow: 2px 2px 15px rgb(2, 2, 2);\n\n  position: absolute;\n  opacity: 0;\n  transition: opacity 300ms ease-in-out;\n  pointer-events: none;\n}\n\n.drop-down-target:hover .drop-down-box {\n  opacity: 1;\n  pointer-events: initial;\n}\n\nul {\n  list-style-type: none;\n}\n\nli:hover,\np:hover {\n  background: #1ce;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,qBAAqB;AACvB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,wBAAwB;EACxB,2CAA2C;;EAE3C,wBAAwB;EACxB,gBAAgB;EAChB,qCAAqC;EACrC,oBAAoB;AACtB;;AAEA;EACE,UAAU;EACV,uBAAuB;AACzB;;AAEA;EACE,2BAA2B;EAC3B,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;AACzB;;AAEA;;EAEE,sBAAsB;AACxB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  /* font-size: 2rem; */\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  /* background: white; */\n  /* padding: 10px 20px; */\n  /* top: 2rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */\n\n  /* position: absolute; */\n  /* opacity: 0; */\n  transition: opacity 300ms ease-in-out;\n  pointer-events: none;\n}\n\n.drop-down-target:hover .drop-down-box {\n  opacity: 1;\n  pointer-events: initial;\n}\n\nul {\n  /* list-style-type: none; */\n  /* padding: 5px; */\n}\n\nli {\n  /* padding: 2px 10px; */\n}\n\nli:hover,\np:hover {\n  /* background: #1ce; */\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1050,21 +1055,69 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const backgroundColor = '#1ce';
+//* **`` SELECTORS ``**
 
 const target = document.querySelectorAll('.drop-down-target');
-console.log(target);
-const box = document.querySelector('.drop-down-box');
+const box = document.querySelectorAll('.drop-down-box');
+const list = document.querySelectorAll('.drop-down-list');
+const listItem = document.querySelectorAll('.drop-down-list li');
 
-[...target].map((obj) => {
-  Object.assign(obj.style, {
-    background: backgroundColor,
-    color: 'white',
-    fontSize: '4rem',
+//* **`` STYLING FUNCTIONS ``**
+
+//? **`` Loops over all 'drop-down-boxes' and styles them.
+[...box].map((element) => {
+  Object.assign(element.style, {
+    background: 'white',
+    boxShadow: '2px 2px 15px rgb(2, 2, 2)',
+    borderRadius: '5px',
+    lineHeight: '1.5rem',
+    position: 'absolute',
+    opacity: '0',
   });
 });
 
-//todo **`` Going to change the above code to style the 'box' instead of the 'target'. Then the ':hover' event is going to be replicated using either 'mouseover' or 'mouseenter' event listeners.
+//? **`` Loops over all 'drop-down-lists' and styles them.
+[...list].map((element) => {
+  Object.assign(element.style, {
+    listStyleType: 'none',
+    padding: '5px',
+  });
+});
+
+//* **`` HOVER STYLING FUNCTIONS ``**
+
+//? **`` Loops over all 'drop-down-list items' and styles them on hover.
+[...listItem].map((element) => {
+  element.addEventListener('mouseover', () => {
+    Object.assign(element.style, {
+      background: '#1ce',
+    });
+  });
+  element.addEventListener('mouseout', () => {
+    Object.assign(element.style, {
+      background: 'initial',
+    });
+  });
+});
+
+//? **`` Loops over all 'drop-down-targets' and reveals the child 'drop-down-box'.
+[...target].map((element) => {
+  element.addEventListener('mouseover', () => {
+    // console.log(element.children);
+    [...box].map((element) => {
+      Object.assign(element.style, {
+        opacity: '1',
+      });
+    });
+  });
+  element.addEventListener('mouseout', () => {
+    [...box].map((element) => {
+      Object.assign(element.style, {
+        opacity: '0',
+      });
+    });
+  });
+});
 
 })();
 

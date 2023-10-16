@@ -1,18 +1,66 @@
 import './normalize.css';
 import './style.css';
 
-const backgroundColor = '#1ce';
+//* **`` SELECTORS ``**
 
 const target = document.querySelectorAll('.drop-down-target');
-console.log(target);
-const box = document.querySelector('.drop-down-box');
+const box = document.querySelectorAll('.drop-down-box');
+const list = document.querySelectorAll('.drop-down-list');
+const listItem = document.querySelectorAll('.drop-down-list li');
 
-[...target].map((obj) => {
-  Object.assign(obj.style, {
-    background: backgroundColor,
-    color: 'white',
-    fontSize: '4rem',
+//* **`` STYLING FUNCTIONS ``**
+
+//? **`` Loops over all 'drop-down-boxes' and styles them.
+[...box].map((element) => {
+  Object.assign(element.style, {
+    background: 'white',
+    boxShadow: '2px 2px 15px rgb(2, 2, 2)',
+    borderRadius: '5px',
+    lineHeight: '1.5rem',
+    position: 'absolute',
+    opacity: '0',
   });
 });
 
-//todo **`` Going to change the above code to style the 'box' instead of the 'target'. Then the ':hover' event is going to be replicated using either 'mouseover' or 'mouseenter' event listeners.
+//? **`` Loops over all 'drop-down-lists' and styles them.
+[...list].map((element) => {
+  Object.assign(element.style, {
+    listStyleType: 'none',
+    padding: '5px',
+  });
+});
+
+//* **`` HOVER STYLING FUNCTIONS ``**
+
+//? **`` Loops over all 'drop-down-list items' and styles them on hover.
+[...listItem].map((element) => {
+  element.addEventListener('mouseover', () => {
+    Object.assign(element.style, {
+      background: '#1ce',
+    });
+  });
+  element.addEventListener('mouseout', () => {
+    Object.assign(element.style, {
+      background: 'initial',
+    });
+  });
+});
+
+//? **`` Loops over all 'drop-down-targets' and reveals the child 'drop-down-box'.
+[...target].map((element) => {
+  element.addEventListener('mouseover', () => {
+    // console.log(element.children);
+    [...box].map((element) => {
+      Object.assign(element.style, {
+        opacity: '1',
+      });
+    });
+  });
+  element.addEventListener('mouseout', () => {
+    [...box].map((element) => {
+      Object.assign(element.style, {
+        opacity: '0',
+      });
+    });
+  });
+});
