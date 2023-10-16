@@ -1,6 +1,25 @@
 import './normalize.css';
 import './style.css';
 
+//* **`` STYLING VARIABLES ``**
+
+//! **`` Feel free to change these variables to style your dropdowns :)
+//!----------------------------------------------------------------
+//? **`` Dropdown Box
+const dDBBackground = 'white';
+const boxShadow = '2px 2px 15px rgb(2, 2, 2)';
+const borderRadius = '5px';
+const lineHeight = '1.5rem';
+const fadeInOutTransition = '300ms ease-in-out';
+
+//? **`` Dropdown List
+const listStyleType = 'none';
+const padding = '5px';
+
+//? **`` Hovering Over List Items
+const lIBackground = '#1ce';
+//!----------------------------------------------------------------
+
 //* **`` SELECTORS ``**
 
 const target = document.querySelectorAll('.drop-down-target');
@@ -13,13 +32,13 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
 //? **`` Loops over all 'drop-down-boxes' and styles them.
 [...box].map((element) => {
   Object.assign(element.style, {
-    background: 'white',
-    boxShadow: '2px 2px 15px rgb(2, 2, 2)',
-    borderRadius: '5px',
-    lineHeight: '1.5rem',
+    background: dDBBackground,
+    boxShadow: boxShadow,
+    borderRadius: borderRadius,
+    lineHeight: lineHeight,
+    transition: 'opacity ' + fadeInOutTransition,
     position: 'absolute',
     opacity: '0',
-    transition: 'opacity 300ms ease-in-out',
     pointerEvents: 'none',
   });
 });
@@ -27,8 +46,8 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
 //? **`` Loops over all 'drop-down-lists' and styles them.
 [...list].map((element) => {
   Object.assign(element.style, {
-    listStyleType: 'none',
-    padding: '5px',
+    listStyleType: listStyleType,
+    padding: padding,
   });
 });
 
@@ -38,7 +57,7 @@ const listItem = document.querySelectorAll('.drop-down-list > *');
 [...listItem].map((element) => {
   element.addEventListener('mouseover', () => {
     Object.assign(element.style, {
-      background: '#1ce',
+      background: lIBackground,
     });
   });
   element.addEventListener('mouseout', () => {
