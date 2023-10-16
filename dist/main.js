@@ -447,13 +447,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
   /* position: absolute; */
   /* opacity: 0; */
-  transition: opacity 300ms ease-in-out;
-  pointer-events: none;
+  /* transition: opacity 300ms ease-in-out; */
+  /* pointer-events: none; */
 }
 
 .drop-down-target:hover .drop-down-box {
-  opacity: 1;
-  pointer-events: initial;
+  /* opacity: 1; */
+  /* pointer-events: initial; */
 }
 
 ul {
@@ -469,7 +469,7 @@ li:hover,
 p:hover {
   /* background: #1ce; */
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,qBAAqB;AACvB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,wBAAwB;EACxB,2CAA2C;;EAE3C,wBAAwB;EACxB,gBAAgB;EAChB,qCAAqC;EACrC,oBAAoB;AACtB;;AAEA;EACE,UAAU;EACV,uBAAuB;AACzB;;AAEA;EACE,2BAA2B;EAC3B,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;AACzB;;AAEA;;EAEE,sBAAsB;AACxB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  /* font-size: 2rem; */\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  /* background: white; */\n  /* padding: 10px 20px; */\n  /* top: 2rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */\n\n  /* position: absolute; */\n  /* opacity: 0; */\n  transition: opacity 300ms ease-in-out;\n  pointer-events: none;\n}\n\n.drop-down-target:hover .drop-down-box {\n  opacity: 1;\n  pointer-events: initial;\n}\n\nul {\n  /* list-style-type: none; */\n  /* padding: 5px; */\n}\n\nli {\n  /* padding: 2px 10px; */\n}\n\nli:hover,\np:hover {\n  /* background: #1ce; */\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,aAAa;;EAEb,aAAa;EACb,SAAS;AACX;;AAEA;EACE,wBAAwB;EACxB,iBAAiB;EACjB,sBAAsB;EACtB,qBAAqB;AACvB;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,wBAAwB;EACxB,eAAe;EACf,yBAAyB;EACzB,wBAAwB;EACxB,2CAA2C;;EAE3C,wBAAwB;EACxB,gBAAgB;EAChB,2CAA2C;EAC3C,0BAA0B;AAC5B;;AAEA;EACE,gBAAgB;EAChB,6BAA6B;AAC/B;;AAEA;EACE,2BAA2B;EAC3B,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;AACzB;;AAEA;;EAEE,sBAAsB;AACxB","sourcesContent":["body {\n  background: #bada55;\n  padding: 10px;\n\n  display: flex;\n  gap: 50px;\n}\n\n.drop-down-target {\n  /* width: fit-content; */\n  /* width: 50px; */\n  /* background: blue; */\n  /* font-size: 2rem; */\n}\n\n.drop-down-box {\n  /* width: 100px; */\n  /* background: white; */\n  /* padding: 10px 20px; */\n  /* top: 2rem; */\n  /* line-height: 1.5rem; */\n  /* border-radius: 5px; */\n  /* box-shadow: 2px 2px 15px rgb(2, 2, 2); */\n\n  /* position: absolute; */\n  /* opacity: 0; */\n  /* transition: opacity 300ms ease-in-out; */\n  /* pointer-events: none; */\n}\n\n.drop-down-target:hover .drop-down-box {\n  /* opacity: 1; */\n  /* pointer-events: initial; */\n}\n\nul {\n  /* list-style-type: none; */\n  /* padding: 5px; */\n}\n\nli {\n  /* padding: 2px 10px; */\n}\n\nli:hover,\np:hover {\n  /* background: #1ce; */\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1060,7 +1060,7 @@ __webpack_require__.r(__webpack_exports__);
 const target = document.querySelectorAll('.drop-down-target');
 const box = document.querySelectorAll('.drop-down-box');
 const list = document.querySelectorAll('.drop-down-list');
-const listItem = document.querySelectorAll('.drop-down-list li');
+const listItem = document.querySelectorAll('.drop-down-list > *');
 
 //* **`` STYLING FUNCTIONS ``**
 
@@ -1073,6 +1073,8 @@ const listItem = document.querySelectorAll('.drop-down-list li');
     lineHeight: '1.5rem',
     position: 'absolute',
     opacity: '0',
+    transition: 'opacity 300ms ease-in-out',
+    pointerEvents: 'none',
   });
 });
 
@@ -1103,18 +1105,15 @@ const listItem = document.querySelectorAll('.drop-down-list li');
 //? **`` Loops over all 'drop-down-targets' and reveals the child 'drop-down-box'.
 [...target].map((element) => {
   element.addEventListener('mouseover', () => {
-    // console.log(element.children);
-    [...box].map((element) => {
-      Object.assign(element.style, {
-        opacity: '1',
-      });
+    Object.assign(element.children[0].style, {
+      opacity: '1',
+      pointerEvents: 'initial',
     });
   });
   element.addEventListener('mouseout', () => {
-    [...box].map((element) => {
-      Object.assign(element.style, {
-        opacity: '0',
-      });
+    Object.assign(element.children[0].style, {
+      opacity: '0',
+      pointerEvents: 'none',
     });
   });
 });

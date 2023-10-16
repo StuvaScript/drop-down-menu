@@ -24,13 +24,13 @@ body {
 
   /* position: absolute; */
   /* opacity: 0; */
-  transition: opacity 300ms ease-in-out;
-  pointer-events: none;
+  /* transition: opacity 300ms ease-in-out; */
+  /* pointer-events: none; */
 }
 
 .drop-down-target:hover .drop-down-box {
-  opacity: 1;
-  pointer-events: initial;
+  /* opacity: 1; */
+  /* pointer-events: initial; */
 }
 
 ul {

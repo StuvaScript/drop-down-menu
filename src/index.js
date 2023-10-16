@@ -6,7 +6,7 @@ import './style.css';
 const target = document.querySelectorAll('.drop-down-target');
 const box = document.querySelectorAll('.drop-down-box');
 const list = document.querySelectorAll('.drop-down-list');
-const listItem = document.querySelectorAll('.drop-down-list li');
+const listItem = document.querySelectorAll('.drop-down-list > *');
 
 //* **`` STYLING FUNCTIONS ``**
 
@@ -19,6 +19,8 @@ const listItem = document.querySelectorAll('.drop-down-list li');
     lineHeight: '1.5rem',
     position: 'absolute',
     opacity: '0',
+    transition: 'opacity 300ms ease-in-out',
+    pointerEvents: 'none',
   });
 });
 
@@ -49,18 +51,15 @@ const listItem = document.querySelectorAll('.drop-down-list li');
 //? **`` Loops over all 'drop-down-targets' and reveals the child 'drop-down-box'.
 [...target].map((element) => {
   element.addEventListener('mouseover', () => {
-    // console.log(element.children);
-    [...box].map((element) => {
-      Object.assign(element.style, {
-        opacity: '1',
-      });
+    Object.assign(element.children[0].style, {
+      opacity: '1',
+      pointerEvents: 'initial',
     });
   });
   element.addEventListener('mouseout', () => {
-    [...box].map((element) => {
-      Object.assign(element.style, {
-        opacity: '0',
-      });
+    Object.assign(element.children[0].style, {
+      opacity: '0',
+      pointerEvents: 'none',
     });
   });
 });
