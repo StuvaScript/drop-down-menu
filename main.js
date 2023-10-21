@@ -16,26 +16,6 @@ __webpack_require__.r(__webpack_exports__);
 // import './style.css';
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function stuDropDown() {
-  //* **`` STYLING VARIABLES ``**
-
-  //! **`` Feel free to change these variables to style your dropdowns :)
-  //!----------------------------------------------------------------
-  //? **`` Dropdown Box
-  const dDBBackground = 'white';
-  const boxShadow = '2px 2px 15px rgb(2, 2, 2)';
-  const borderRadius = '5px';
-  const lineHeight = '1.5rem';
-  const distanceBelowTarget = '1.2rem';
-  const fadeInOutTransition = '300ms ease-in-out';
-
-  //? **`` Dropdown List
-  const listStyleType = 'none';
-  const padding = '5px';
-
-  //? **`` Hovering Over List Items
-  const lIBackground = '#1ce';
-  //!----------------------------------------------------------------
-
   //* **`` SELECTORS ``**
 
   const target = document.querySelectorAll('.drop-down-target');
@@ -55,12 +35,12 @@ __webpack_require__.r(__webpack_exports__);
   //? **`` Loops over all 'drop-down-boxes' and styles them.
   [...box].map((element) => {
     Object.assign(element.style, {
-      background: dDBBackground,
-      boxShadow: boxShadow,
-      borderRadius: borderRadius,
-      lineHeight: lineHeight,
-      top: distanceBelowTarget,
-      transition: 'opacity ' + fadeInOutTransition,
+      background: 'white',
+      boxShadow: '2px 2px 15px rgb(2, 2, 2)',
+      borderRadius: '5px',
+      lineHeight: '1.5rem',
+      top: '1.2rem',
+      transition: 'opacity 300ms ease-in-out',
       position: 'absolute',
       opacity: '0',
       zIndex: '1',
@@ -71,8 +51,8 @@ __webpack_require__.r(__webpack_exports__);
   //? **`` Loops over all 'drop-down-lists' and styles them.
   [...list].map((element) => {
     Object.assign(element.style, {
-      listStyleType: listStyleType,
-      padding: padding,
+      listStyleType: 'none',
+      padding: '5px',
     });
   });
 
@@ -82,7 +62,7 @@ __webpack_require__.r(__webpack_exports__);
   [...listItem].map((element) => {
     element.addEventListener('mouseover', () => {
       Object.assign(element.style, {
-        background: lIBackground,
+        background: '#1ce',
       });
     });
     element.addEventListener('mouseout', () => {
