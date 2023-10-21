@@ -1,1 +1,1 @@
-import { stuDropDown } from './other';
+import { whatevs } from './other';
